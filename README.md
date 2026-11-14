@@ -9,14 +9,14 @@ A low-cost Arduino assistive-communication prototype. Three physical push button
 - Demonstrate digital input handling and Boolean decision logic.
 
 ## System Architecture
-**Input:** Button 1, Button 2 and Button 3 on Arduino D2, D3 and D4.  
+**Input:** UP, DOWN and LEFT push buttons connected to Arduino D2, D3 and D4.  
 **Processing:** Arduino reads and debounces the input states, then matches the exact combination.  
 **Output:** 16×2 I2C LCD.
 
 ## Button Command Table
 1 = pressed; 0 = not pressed.
 
-| Button 1 | Button 2 | Button 3 | LCD message |
+| UP (D2) | DOWN (D3) | LEFT (D4) | LCD message |
 |---:|---:|---:|---|
 | 0 | 0 | 0 | WAITING |
 | 1 | 0 | 0 | HELLO EVERYONE |
@@ -29,7 +29,7 @@ A low-cost Arduino assistive-communication prototype. Three physical push button
 
 ## Hardware Requirements
 - Arduino Uno or compatible Nano — 1
-- Momentary push buttons — 3
+- Momentary push buttons — 3 (labelled UP, DOWN and LEFT)
 - 10 kΩ pull-down resistors — 3
 - 16×2 I2C LCD — 1
 - 1 kΩ resistor — 1 (purchased; intended use not confirmed in the documented circuit)
@@ -38,14 +38,14 @@ A low-cost Arduino assistive-communication prototype. Three physical push button
 ## Pin Connections
 | Component | Arduino |
 |---|---|
-| Button 1 signal | D2 |
-| Button 2 signal | D3 |
-| Button 3 signal | D4 |
+| UP button signal | D2 |
+| DOWN button signal | D3 |
+| LEFT button signal | D4 |
 | LCD SDA | A4 (Uno/Nano) |
 | LCD SCL | A5 (Uno/Nano) |
 | LCD VCC / GND | 5V / GND |
 
-Each button connects between 5V and its input pin. A separate 10 kΩ resistor connects each input pin to GND. All grounds are common. Check the LCD module voltage rating. Full details: [wiring and components](hardware/wiring-and-components.md).
+Each button connects between 5V and its input pin. A separate 10 kΩ resistor connects each input pin to GND. All grounds are common. Full details: [wiring and components](hardware/wiring-and-components.md).
 
 ## Software Setup
 1. Install Arduino IDE.
