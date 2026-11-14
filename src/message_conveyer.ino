@@ -1,19 +1,23 @@
 /*
   Button-Based Message Conveyer System for Paralysis Patients
-  Button 1 -> D2; Button 2 -> D3; Button 3 -> D4
-  Each input: 10 kOhm pull-down to GND; button connects input to 5V.
-  I2C LCD: SDA -> A4, SCL -> A5 on Arduino Uno/Nano.
+  UP button    -> D2
+  DOWN button  -> D3
+  LEFT button  -> D4
+
+  Each input has a 10 kOhm pull-down resistor to GND.
+  Each button connects its input pin to 5V when pressed.
   HIGH = pressed; LOW = released.
-  External pull-down wiring is used; do not use INPUT_PULLUP here.
+  I2C LCD: SDA -> A4, SCL -> A5 on Arduino Uno/Nano.
+  External pull-down wiring is used; do not use INPUT_PULLUP.
   Default LCD address: 0x27 (change to 0x3F if required).
 */
 
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
 
-const byte BUTTON_1_PIN = 2;
-const byte BUTTON_2_PIN = 3;
-const byte BUTTON_3_PIN = 4;
+const byte UP_BUTTON_PIN = 2;
+const byte DOWN_BUTTON_PIN = 3;
+const byte LEFT_BUTTON_PIN = 4;
 const byte LCD_ADDRESS = 0x27;
 const unsigned long DEBOUNCE_MS = 35;
 
@@ -23,11 +27,12 @@ byte lastRawPattern = 0;
 byte lastShownPattern = 255;
 unsigned long lastRawChange = 0;
 
+// Bit 0 = UP, bit 1 = DOWN, bit 2 = LEFT.
 byte readButtons() {
   byte value = 0;
-  if (digitalRead(BUTTON_1_PIN) == HIGH) value |= 0b001;
-  if (digitalRead(BUTTON_2_PIN) == HIGH) value |= 0b010;
-  if (digitalRead(BUTTON_3_PIN) == HIGH) value |= 0b100;
+  if (digitalRead(UP_BUTTON_PIN) == HIGH) value |= 0b001;
+  if (digitalRead(DOWN_BUTTON_PIN) == HIGH) value |= 0b010;
+  if (digitalRead(LEFT_BUTTON_PIN) == HIGH) value |= 0b100;
   return value;
 }
 
@@ -54,9 +59,9 @@ void displayPattern(byte pattern) {
 }
 
 void setup() {
-  pinMode(BUTTON_1_PIN, INPUT);
-  pinMode(BUTTON_2_PIN, INPUT);
-  pinMode(BUTTON_3_PIN, INPUT);
+  pinMode(UP_BUTTON_PIN, INPUT);
+  pinMode(DOWN_BUTTON_PIN, INPUT);
+  pinMode(LEFT_BUTTON_PIN, INPUT);
 
   lcd.init();
   lcd.backlight();
