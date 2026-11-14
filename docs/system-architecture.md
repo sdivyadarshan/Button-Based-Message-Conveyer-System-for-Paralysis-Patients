@@ -7,7 +7,8 @@
               |
               v
 +---------------------------+
-|  Three Push-Button Inputs |
+|    Three Push Buttons     |
+|       UP / DOWN / LEFT    |
 |        D2, D3, D4         |
 +-------------+-------------+
               |
@@ -26,10 +27,10 @@
 ~~~
 
 ## Functional Blocks
-- **Input:** Three momentary push buttons with 10 kΩ pull-down resistors.
+- **Input:** UP, DOWN and LEFT momentary push buttons with 10 kΩ pull-down resistors.
 - **Processing:** Arduino samples inputs, debounces the pattern and maps it to a predefined message.
 - **Output:** The I2C LCD displays the selected message.
 
-Signal flow: button state → digital sampling → debounce → pattern encoding → message lookup → LCD.
+Signal flow: directional button state → digital sampling → debounce → pattern encoding → message lookup → LCD.
 
 The prototype is standalone. It does not send messages to a phone, cloud service or remote caregiver and has no audio output.
