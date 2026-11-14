@@ -1,0 +1,10 @@
+Component,Signal,Arduino Uno/Nano,Notes
+Button 1,Signal,D2,10 kOhm pull-down to GND; switch connects signal to 5V
+Button 2,Signal,D3,10 kOhm pull-down to GND; switch connects signal to 5V
+Button 3,Signal,D4,10 kOhm pull-down to GND; switch connects signal to 5V
+Buttons,Supply,5V,Use opposite internally connected sides of tactile switch
+Buttons,Common ground,GND,All pull-down resistors share Arduino GND
+I2C LCD,VCC,5V,Confirm module voltage rating
+I2C LCD,GND,GND,Common ground
+I2C LCD,SDA,A4,Uno/Nano I2C data
+I2C LCD,SCL,A5,Uno/Nano I2C clock
