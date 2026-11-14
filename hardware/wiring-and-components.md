@@ -4,7 +4,7 @@
 | Component | Quantity | Purpose |
 |---|---:|---|
 | Arduino Uno / compatible Nano | 1 | Main controller |
-| Momentary push buttons | 3 | User inputs |
+| Momentary push buttons | 3 | UP, DOWN and LEFT user inputs |
 | 10 kΩ resistors | 3 | Pull-down resistors |
 | 16×2 I2C LCD | 1 | Message output |
 | 1 kΩ resistor | 1 | Purchased item; use not confirmed |
@@ -22,11 +22,11 @@ Repeat this circuit for all three buttons:
                          GND
 ~~~
 
-| Button | Input pin | Button connection | Resistor |
+| Directional button | Arduino input pin | Button connection | Pull-down resistor |
 |---|---|---|---|
-| Button 1 | D2 | 5V to D2 | D2 to GND |
-| Button 2 | D3 | 5V to D3 | D3 to GND |
-| Button 3 | D4 | 5V to D4 | D4 to GND |
+| UP | D2 | 5V to D2 | D2 to GND |
+| DOWN | D3 | 5V to D3 | D3 to GND |
+| LEFT | D4 | 5V to D4 | D4 to GND |
 
 Released = LOW; pressed = HIGH. Each input needs its own pull-down resistor. Resistors are non-polar and can be installed in either orientation.
 
