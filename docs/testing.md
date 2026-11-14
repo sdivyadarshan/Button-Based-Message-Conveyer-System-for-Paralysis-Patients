@@ -6,20 +6,20 @@ The student reported that the LCD initially showed unintended messages while but
 ## Bench Checklist
 - [ ] Confirm board selection and operating voltage.
 - [ ] Confirm common GND for Arduino, LCD and button circuit.
-- [ ] Verify Button 1 changes D2 from LOW to HIGH when pressed.
-- [ ] Verify Button 2 changes D3 from LOW to HIGH when pressed.
-- [ ] Verify Button 3 changes D4 from LOW to HIGH when pressed.
+- [ ] Verify UP changes D2 from LOW to HIGH when pressed.
+- [ ] Verify DOWN changes D3 from LOW to HIGH when pressed.
+- [ ] Verify LEFT changes D4 from LOW to HIGH when pressed.
 - [ ] Confirm all released inputs read LOW.
 - [ ] Confirm LCD initializes and displays text.
 - [ ] Confirm LCD I2C address.
 - [ ] No buttons: WAITING.
-- [ ] Button 1: HELLO EVERYONE.
-- [ ] Button 2: BYE EVERYONE.
-- [ ] Button 3: I NEED HELP.
-- [ ] Button 1 + 2: EMERGENCY.
-- [ ] Button 1 + 3: PLEASE COME HERE.
-- [ ] Button 2 + 3: WATER PLEASE.
-- [ ] All three: I AM NOT OK / HELP ME.
+- [ ] UP only: HELLO EVERYONE.
+- [ ] DOWN only: BYE EVERYONE.
+- [ ] LEFT only: I NEED HELP.
+- [ ] UP + DOWN: EMERGENCY.
+- [ ] UP + LEFT: PLEASE COME HERE.
+- [ ] DOWN + LEFT: WATER PLEASE.
+- [ ] UP + DOWN + LEFT: I AM NOT OK / HELP ME.
 - [ ] Repeat tests to check for missed or false inputs.
 - [ ] Confirm message remains stable after release.
 
@@ -27,13 +27,13 @@ The student reported that the LCD initially showed unintended messages while but
 | Test | Expected output | Actual output | Pass/Fail |
 |---|---|---|---|
 | No buttons | WAITING | Not formally recorded | Not recorded |
-| Button 1 | HELLO EVERYONE | Not formally recorded | Not recorded |
-| Button 2 | BYE EVERYONE | Not formally recorded | Not recorded |
-| Button 3 | I NEED HELP | Not formally recorded | Not recorded |
-| Button 1 + 2 | EMERGENCY | Not formally recorded | Not recorded |
-| Button 1 + 3 | PLEASE COME HERE | Not formally recorded | Not recorded |
-| Button 2 + 3 | WATER PLEASE | Not formally recorded | Not recorded |
-| All three | I AM NOT OK / HELP ME | Not formally recorded | Not recorded |
+| UP | HELLO EVERYONE | Not formally recorded | Not recorded |
+| DOWN | BYE EVERYONE | Not formally recorded | Not recorded |
+| LEFT | I NEED HELP | Not formally recorded | Not recorded |
+| UP + DOWN | EMERGENCY | Not formally recorded | Not recorded |
+| UP + LEFT | PLEASE COME HERE | Not formally recorded | Not recorded |
+| DOWN + LEFT | WATER PLEASE | Not formally recorded | Not recorded |
+| UP + DOWN + LEFT | I AM NOT OK / HELP ME | Not formally recorded | Not recorded |
 
 ## Troubleshooting
 - Random messages: inspect floating inputs, missing pull-down resistors, loose GND and switch leg orientation.
