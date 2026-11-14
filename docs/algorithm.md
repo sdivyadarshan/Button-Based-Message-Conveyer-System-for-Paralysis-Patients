@@ -1,10 +1,10 @@
 # Algorithm and Message Logic
 
 ## Input Encoding
-Button 1 (D2) is bit 0, Button 2 (D3) is bit 1, and Button 3 (D4) is bit 2. Pressed is HIGH (1); released is LOW (0).
+UP (D2) is bit 0, DOWN (D3) is bit 1, and LEFT (D4) is bit 2. Pressed is HIGH (1); released is LOW (0).
 
 ## Message Table
-| Button 1 | Button 2 | Button 3 | Pattern | Message |
+| UP | DOWN | LEFT | Pattern (UP, DOWN, LEFT) | Message |
 |---:|---:|---:|:---:|---|
 | 0 | 0 | 0 | 000 | WAITING |
 | 1 | 0 | 0 | 001 | HELLO EVERYONE |
@@ -16,7 +16,7 @@ Button 1 (D2) is bit 0, Button 2 (D3) is bit 1, and Button 3 (D4) is bit 2. Pres
 | 1 | 1 | 1 | 111 | I AM NOT OK / HELP ME |
 
 ## Algorithm
-1. Configure D2, D3 and D4 as inputs.
+1. Configure D2 (UP), D3 (DOWN) and D4 (LEFT) as inputs.
 2. Initialize the I2C LCD.
 3. Read the three button states and encode them as a 3-bit pattern.
 4. Wait for the input pattern to remain stable for the debounce interval.
@@ -30,7 +30,7 @@ AND describes a condition where all specified inputs are active together. OR des
 ## Pseudocode
 ~~~text
 START
-  initialize buttons and LCD
+  initialize UP, DOWN, LEFT buttons and LCD
   REPEAT
     read all button states
     debounce input pattern
