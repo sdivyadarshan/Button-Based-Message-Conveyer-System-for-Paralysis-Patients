@@ -63,6 +63,24 @@ Wire is included with the Arduino environment. LiquidCrystal_I2C is an external 
 - `docs/` — algorithm, architecture, design decisions, testing, contribution and AI disclosure
 - `media/` — location for original project photographs and demo links
 
+## Project Gallery
+
+The following images show the project design, operating instructions, physical prototype and observed LCD output.
+
+### Block Diagram
+![System block diagram](media/block%20diagram.jpeg)
+
+### Operating Instructions
+![Project operating instructions](media/instructions.jpeg)
+
+### Hardware Prototype
+![Model 1(a) - hardware prototype](media/model1%28a%29.jpeg)
+
+### LCD Output
+![LCD output demonstration](media/output.jpeg)
+
+[View all project media](media/)
+
 ## Testing Status
 The student reported that the LCD and button combinations worked after completing all button connections. This is a user-reported observation, not independent formal validation. Formal test logs and photographs have not been supplied. See the [testing checklist](docs/testing.md).
 
